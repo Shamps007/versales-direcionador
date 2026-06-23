@@ -1,0 +1,6 @@
+{
+  "name": "Versailles Refrigeração Contato",
+  "description": "Página de contato rápido via WhatsApp para Versailles Refrigeração",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
