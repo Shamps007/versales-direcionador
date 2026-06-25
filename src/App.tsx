@@ -9,7 +9,7 @@ export default function App() {
   const handleWhatsAppClick = () => {
     // Check if gtag is defined on the window object
     if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-      (window as any).gtag('event', 'conversion', {'send_to': 'AW-716672530/SEU_ROTULO_AQUI'});
+      (window as any).gtag('event', 'conversion', {'send_to': 'AW-716672530/lHLPCJy53sUcEJkc3tUC'});
     }
   };
 
