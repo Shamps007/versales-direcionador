@@ -4,6 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Versailles Refrigeração</title>
+    <script>
+      // The platform sets window.fetch as a getter to intercept requests.
+      // gtag.js attempts to overwrite window.fetch, which throws a TypeError.
+      // This suppresses the error so the app continues to function correctly.
+      window.addEventListener('error', function(e) {
+        if (e.message && e.message.includes('Cannot set property fetch')) {
+          e.preventDefault();
+        }
+      });
+      try {
+        const desc = Object.getOwnPropertyDescriptor(window, 'fetch');
+        if (desc && desc.set === undefined && desc.configurable) {
+          const origFetch = desc.get ? desc.get.call(window) : window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: () => origFetch,
+            set: (v) => {},
+            configurable: true
+          });
+        }
+      } catch (err) {}
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-716672530"></script>
     <script>
