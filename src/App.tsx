@@ -6,6 +6,13 @@ export default function App() {
   const whatsappMessage = encodeURIComponent("Olá! Vim pelo site e gostaria de solicitar um orçamento/atendimento.");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
+  const handleWhatsAppClick = () => {
+    // Check if gtag is defined on the window object
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'conversion', {'send_to': 'AW-716672530/SEU_ROTULO_AQUI'});
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4 font-sans text-slate-900">
       
@@ -53,6 +60,7 @@ export default function App() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleWhatsAppClick}
             className="group w-full relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-[#25D366] font-sans rounded-xl hover:bg-[#22bf5b] hover:shadow-lg hover:shadow-[#25D366]/30 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#25D366]"
           >
             {/* WhatsApp SVG Icon */}
